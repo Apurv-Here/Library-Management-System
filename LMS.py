@@ -24,8 +24,10 @@ class Student_Library:
         if bool1:
             print("You can lend any books you want")
         else:
-            print("These books are not available right now")
-            print(self.lendDict.keys())
+            print("These books are not available right now:")
+            # print(self.lendDict.keys())
+            for key in self.lendDict:
+                print(key)
             
     
     # Fuction to lend the book
@@ -43,15 +45,16 @@ class Student_Library:
 
     # Fuction to return the book
     def returnBooks(self, book):
-        # If dictionary is empty, so to avoid any erros
+        # Dictonary should not be empty before performing pop
         bool1 = not bool(self.lendDict)
         if bool1:
             print("Invalid option. Please select carefully")
+
+        else:
+            self.lendDict.pop(book)
+            print("Book has been returned successfully")
+
         
-        self.lendDict.keys(book)
-        print("Book has been returned successfully")
-
-
 
 # Main where actual program will run
 if __name__=='__main__':
@@ -102,15 +105,18 @@ if __name__=='__main__':
             library_obj.displayLendBooks()
 
         elif(user_input1 == 3):
-            user = input("Enter tour name = ")
+            user = input("Enter your name = ")
             book = input("Enter book name = ")
             library_obj.lendBooks(user, book)
 
         elif(user_input1 == 4):
-            library_obj.addBooks()
+            book = input("Enter the name of book you want to add = ")
+            library_obj.addBooks(book)
 
         elif(user_input1 == 5):
-            library_obj.returnBooks()
+            book = input("Enter the name of book you want to return = ")
+            library_obj.returnBooks(book)
+            
 
         print("\nPress Q to quit and C to continue ")
         user_input3 = input()
