@@ -56,7 +56,7 @@ class Student_Library:
 
         
 
-# Main where actual program will run
+# This is the main where actual program will run
 if __name__=='__main__':
 
     book_list = ['Atomic Habits', 'Rich Dadd Poor Dad', 'Harry Potter', 'Lord of the Rings']
@@ -66,7 +66,7 @@ if __name__=='__main__':
     # Creating this loop so that user can use the library again without going outside the portal
     while(True):
 
-        #-----------
+        #--------------------------------------------------------------------------------------
         # Creating this loop so that user cannot type wrong input and can interact with portal 
         # without worrying of selecting only right options
         program2 = True
@@ -127,3 +127,5 @@ if __name__=='__main__':
             print("Thank you for using our portal....")
             exit()
         
+
+# -------------------------------------------------------------------------------------------------------------------------------------
